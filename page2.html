@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Trirong&display=swap" rel="stylesheet">
+
+<title>Message</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* ---------- PAGE BASE ---------- */
+.page {
+  display: none;
+  height: 100vh;
+  width: 100%;
+  padding: 40px 20px;
+}
+
+.page.active {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- BACKGROUNDS ---------- */
+.page1, .page2, .page3 {
+  background: linear-gradient(180deg, #fde2e4, #f9c5d1, #fbcfe8);
+}
+
+.page4 {
+  background: linear-gradient(
+    160deg,
+    #f1d6e2 0%,
+    #e6c9df 40%,
+    #d8c3e8 75%,
+    #cfc0e6 100%
+
+  );
+}
+
+.draft {
+  background: linear-gradient(180deg, #f7efe5, #f3e8dc, #efe1d3);
+}
+
+.end {
+  background: linear-gradient(180deg, #fde2e4, #f9c5d1);
+}
+
+/* ---------- HEADINGS ---------- */
+h1 {
+  font-family: "Trirong", serif;
+  font-size: 2.8rem;
+  text-align: center;
+  color: #4a3a2c;
+  margin-bottom: 30px;
+}
+
+/* ---------- TEXT ---------- */
+.text {
+  max-width: 700px;
+  margin: auto;
+  font-family: "Trirong", serif;
+  font-size: 1.15rem;
+  line-height: 2;
+  color: #3b2f25;
+  text-align: left;
+}
+
+/* ---------- PAGE 1 ALIGNMENT ONLY ---------- */
+.page1 .content {
+  margin-top: 120px;
+  text-align: center;
+}
+
+.page1 .text {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* ---------- BUTTONS ---------- */
+.buttons {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+}
+
+.btn {
+  width: 300px;
+  padding: 14px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 18px;
+  font-variant: small-caps;
+  border-radius: 30px;
+  border: 1.5px solid rgba(74,58,44,0.4);
+  background: rgba(255,255,255,0.45);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: rgba(255,255,255,0.7);
+  transform: translateY(-2px);
+}
+
+/* ---------- SCROLL AREA (FORCED VISIBILITY) ---------- */
+.scroll-area {
+  flex: 1;
+  max-height: 55vh;        /* FORCE SCROLL REGION */
+  overflow-y: scroll;     /* ALWAYS SHOW SCROLLBAR */
+  padding-right: 14px;
+  scrollbar-width: thin;
+  scrollbar-color: #9a6f86 rgba(255,255,255,0.45);
+}
+
+/* Chrome / Edge / Safari */
+.scroll-area::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-area::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.45);
+  border-radius: 10px;
+}
+
+.scroll-area::-webkit-scrollbar-thumb {
+  background-color: #9a6f86;
+  border-radius: 10px;
+}
+
+.scroll-area::-webkit-scrollbar-thumb:hover {
+  background-color: #7c4f65;
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  margin-top: 30px;
+  text-align: center;
+  font-family: "Trirong", serif;
+  font-size: 0.95rem;
+  color: rgba(74, 58, 44, 0.6);
+}
+
+/* ---------- END PAGE ---------- */
+.end {
+  justify-content: center;
+  align-items: center;
+}
+
+.end h1 {
+  font-size: 4rem;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page page1 active" id="page1">
+  <div class="content">
+    <h1>Hi Pravee.</h1>
+    <div class="text">
+      I’m here to apologize. No expectations, only respect.
+<p><i>Please choose One Option</i></p>
+    </div>
+
+    <div class="buttons">
+      <button class="btn" onclick="goToPage(2)">“READ THIS.”</button>
+      <button class="btn" onclick="goToPage('end')">"End here"</button>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page page2" id="page2">
+  <h1>A quiet clarification.</h1>
+
+  <div class="scroll-area">
+    <div class="text">
+      I want to say this honestly.  
+      I should have spoken to you sooner.<br><br>
+
+      I chose silence — not because I didn’t care,  
+      but because I didn’t handle things the right way.  
+      That’s where I went wrong.<br><br>
+
+      I understand now how that silence could have felt confusing  
+      or distant, and I regret that deeply.<br><br>
+
+      I’m sorry if my actions caused you hurt or made you feel disrespected.  
+      Even if it wasn’t intentional, I take responsibility for how it felt.<br><br>
+
+      I’m not writing this to explain myself —  
+      only to acknowledge what I should have done differently.
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button class="btn" onclick="goToPage(3)">Continue</button>
+  </div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page page3" id="page3">
+  <h1>What I needed to say.</h1>
+
+  <div class="scroll-area">
+    <div class="text">
+      I’m not someone who wants to hurt anyone.<br><br>
+
+      If I caused you pain, I regret it deeply —  
+      more than words can explain.<br><br>
+
+      I hope you don’t see me as someone who meant to hurt you.  
+      That was never my intention.<br><br>
+
+      I’ll end this here, with respect.<br><br>
+
+      I’m not asking for anything in return.  
+      I only hope, in time, you can forgive me.
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button class="btn" onclick="goToPage(4)">Continue</button>
+  </div>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page page4" id="page4">
+  <h1>On Your Birthday</h1>
+
+  <div class="text">
+<p>17/04 </p>
+    If you receive this note on your birthday, happy birthday, Pravee.
+
+I hope the day brings balance, calm, and a sense of steadiness.
+This is simply a respectful wish, written without intention or expectation.
+
+With respect, Sneh.
+  </div>
+
+  <div class="buttons">
+    <button class="btn" onclick="goToPage('draft')">Continue</button>
+  </div>
+
+  <div class="footer">
+    Written quietly — no expectations
+  </div>
+</div>
+
+<!-- DRAFT PAGE -->
+<div class="page draft" id="draft">
+  <h1>Default Page.</h1>
+
+  <div class="scroll-area">
+    <div class="text">
+      If you are seeing this page, it probably means I’m unsure about how to continue
+      or even how to send everything written before this.  
+      I’m hesitant, and honestly a little afraid of the reaction or the outcome.
+      This is a page I kept for moments when I needed to pause and think.
+    </div>
+  </div>
+
+  <div class="footer">
+    Draft — not finished
+  </div>
+</div>
+
+<!-- END PAGE -->
+<div class="page end" id="end">
+  <h1>Sorry for everything.</h1>
+</div>
+
+<script>
+function goToPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(typeof id === "number" ? "page" + id : id).classList.add('active');
+
+const music = document.getElementById("bgMusic");
+music.volume = 0.08; // calm, pleasant volume
+
+let started = false;
+
+function startMusicOnce() {
+  if (!started) {
+    music.play().catch(() => {});
+    started = true;
+    document.removeEventListener("click", startMusicOnce);
+    document.removeEventListener("touchstart", startMusicOnce);
+  }
+}
+
+// Start music on first interaction
+document.addEventListener("click", startMusicOnce);
+document.addEventListener("touchstart", startMusicOnce);
+
+}
+</script>
+<audio id="bgMusic" loop>
+  <source src="away-in-manger-instrumental-by-jesse-quinn-272162.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+</body>
+</html>
